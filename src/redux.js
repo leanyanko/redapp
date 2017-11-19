@@ -28,8 +28,30 @@ export const geod = (state = {}, action) => {
   }
 };
 
+
+export const aGeoTest = geotest => ({
+  type: 'AGEOTEST',
+  geotest
+});
+
+export const closeTest = () => ({
+  type: 'CLOSETEST'
+});
+
+export const geotest = (state = {}, action) => {
+  switch (action.type) {
+    case 'AGEOTEST':
+      return action.geotest;
+    case 'CLOSETEST':
+      return {};
+    default:
+      return state;
+  }
+};
+
 export const reducers = combineReducers({
   geod,
+  geotest
 });
 
 // store.js
